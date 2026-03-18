@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robotic Esports Hub - Purple Edition</title>
+    <link href="https://fonts.googleapis.com" rel="stylesheet">
+    <style>
+        :root {
+            --neon-purple: #bf40bf; /* Bright Purple */
+            --electric-violet: #7f00ff;
+            --deep-purple: #301934; /* Dark Purple */
+            --bg-dark: #0a0a0c;
+            --card-bg: #1a101f;
+            --text-lavender: #cbc3e3;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: white;
+            font-family: 'Rajdhani', sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .bento-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid rgba(191, 64, 191, 0.2);
+            padding: 25px;
+            border-radius: 20px;
+            position: relative;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .card:hover {
+            border-color: var(--neon-purple);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(127, 0, 255, 0.2);
+        }
+
+        .hero { grid-column: span 2; border-left: 4px solid var(--electric-violet); }
+        .wide { grid-column: span 2; border-left: 4px solid var(--neon-purple); }
+
+        .gaming-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+            background: linear-gradient(to right, var(--neon-purple), var(--electric-violet));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0 0 10px 0;
+        }
+
+        .label {
+            display: block;
+            color: var(--neon-purple);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+
+        .value {
+            font-size: 1.1rem;
+            color: var(--text-lavender);
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        .cta-btn {
+            grid-column: span 3;
+            background: linear-gradient(45deg, var(--electric-violet), var(--neon-purple));
+            color: white;
+            border: none;
+            padding: 20px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 15px;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(127, 0, 255, 0.4);
+        }
+
+        /* Phone Optimization */
+        @media (max-width: 768px) {
+            .bento-container {
+                grid-template-columns: 1fr; /* Stack cards vertically for phones */
+            }
+            .hero, .wide, .cta-btn {
+                grid-column: span 1;
+            }
+            .gaming-title { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="bento-container">
+    <div class="card hero">
+        <h1 class="gaming-title">ROBOTIC ESPORTS</h1>
+        <p class="value">Welcome to the <strong>MINI-ZONE</strong>. A premium arena built for the next generation of competitive gaming.</p>
+    </div>
+
+    <div class="card">
+        <span class="label">GAME MODES</span>
+        <p class="value">Climb the ranks in <strong>SOLO QUEUE</strong> or dominate as a <strong>SQUAD</strong>.</p>
+    </div>
+
+    <div class="card">
+        <span class="label">THE NEXT GEN</span>
+        <p class="value">Exclusively for <strong>TEENS (13-19)</strong>. Socialize and connect with cutting-edge technology.</p>
+    </div>
+
+    <div class="card wide">
+        <span class="label">OUR GOAL</span>
+        <p class="value">To create a hub where you can <strong>socialize</strong> and compete with friends in a high-tech environment.</p>
+    </div>
+
+    <a href="tel:6676789" class="cta-btn">
+        JOIN THE ZONE: 667-6789 <br>
+        <span style="font-size: 0.7rem; font-family: sans-serif; opacity: 0.8;">FOLLOW US @ROBOTICESPORT</span>
+    </a>
+</div>
+
+</body>
+</html>
+
+
+
+       
+            

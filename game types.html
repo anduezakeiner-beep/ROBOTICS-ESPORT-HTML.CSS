@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Selection | Robotic Esports</title>
+    <link href="https://fonts.googleapis.com" rel="stylesheet">
+    <style>
+        :root {
+            --neon-blue: #00f2ff;
+            --neon-purple: #bc13fe;
+            --bg-dark: #05010d;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: var(--bg-dark);
+            font-family: 'Orbitron', sans-serif;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            /* Animated Grid Background */
+            background-image: 
+                linear-gradient(rgba(188, 19, 254, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(188, 19, 254, 0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+
+        h2 {
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            text-shadow: 0 0 10px var(--neon-blue);
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        .game-menu {
+            display: flex;
+            flex-direction: column; /* Vertical stack for phones */
+            gap: 25px;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .game-card {
+            position: relative;
+            height: 200px; /* Wider, shorter cards feel better on mobile */
+            border-radius: 15px;
+            overflow: hidden;
+            text-decoration: none;
+            border: 1px solid rgba(0, 242, 255, 0.3);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            align-items: flex-end;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+
+        /* The Image Background */
+        .game-card img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* This fixes the stretching problem */
+            z-index: 1;
+            transition: transform 0.5s ease;
+        }
+
+        /* Dark overlay for text readability */
+        .game-card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 10%, transparent 70%);
+            z-index: 2;
+        }
+
+        .game-title {
+            position: relative;
+            z-index: 3;
+            padding: 20px;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Small "Play Now" hint */
+        .game-title::after {
+            content: "GO →";
+            font-size: 0.7rem;
+            background: var(--neon-blue);
+            color: black;
+            padding: 4px 8px;
+            border-radius: 4px;
+            box-shadow: 0 0 10px var(--neon-blue);
+        }
+
+        /* Tap/Hover Effects */
+        .game-card:active, .game-card:hover {
+            transform: scale(0.98);
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 30px rgba(0, 242, 255, 0.4);
+        }
+
+        .game-card:active img {
+            transform: scale(1.1);
+        }
+
+        /* Specific card glow colors */
+        .warzone { border-color: #39ff14; } /* Green for Warzone */
+        .fifa { border-color: #00d4ff; }    /* Blue for FIFA */
+        .fallguys { border-color: #ff00ff; } /* Pink for Fall Guys */
+
+    </style>
+</head>
+<body>
+
+    <h2>Select Your Zone</h2>
+
+    <div class="game-menu">
+        <!-- Warzone Link -->
+        <a href="https://www.callofduty.com" class="game-card warzone" target="_blank">
+            <img src="warzone.webp" alt="Warzone">
+            <span class="game-title">Warzone</span>
+        </a>
+
+        <!-- FIFA Link -->
+        <a href="https://www.ea.com" class="game-card fifa" target="_blank">
+            <img src="fifa%20-%20Copy.png" alt="FIFA">
+            <span class="game-title">FC 25</span>
+        </a>
+
+        <!-- Fall Guys Link -->
+        <a href="https://www.fallguys.com" class="game-card fallguys" target="_blank">
+            <img src="fallguys_mediatonic.webp" alt="Fall Guys">
+            <span class="game-title">Fall Guys</span>
+        </a>
+    </div>
+
+</body>
+</html>
